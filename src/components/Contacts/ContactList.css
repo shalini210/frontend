@@ -1,0 +1,208 @@
+/* ContactList.css */
+.contact-list {
+  font-family: 'Roboto', Arial, sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.contact-list h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+/* Search and Sort Container */
+.search-sort-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.search-bar,
+.sort-dropdown {
+  padding: 14px 20px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  width: 48%; /* Adjusted width for better spacing */
+  background-color: #f4f7fc; /* Lighter background */
+  color: #34495e;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar:focus,
+.sort-dropdown:focus {
+  outline: none;
+  border-color: #2980b9;
+  box-shadow: 0 0 6px rgba(41, 128, 185, 0.5);
+}
+
+/* Contact form */
+.contact-form {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #34495e;
+  background-color: #f4f7fc;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: #2980b9;
+  outline: none;
+  box-shadow: 0 0 6px rgba(41, 128, 185, 0.5);
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background-color: #27ae60; /* Green for save */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-right: 15px;
+}
+
+.contact-form button:hover {
+  background-color: #2ecc71; /* Bright green on hover */
+  transform: translateY(-2px);
+}
+
+.contact-form button[type="button"] {
+  background-color: #95a5a6; /* Neutral gray for cancel */
+}
+
+.contact-form button[type="button"]:hover {
+  background-color: #7f8c8d; /* Darker gray on hover */
+  transform: translateY(-2px);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 16px;
+  border: 1px solid #ecf0f1;
+  font-size: 16px;
+  color: #34495e;
+}
+
+table th {
+  background-color: #3498db; /* Subtle blue for header */
+  color: #ffffff;
+  font-weight: 600;
+}
+
+table tbody tr:hover {
+  background-color: #f2f4f9; /* Light blue-gray hover effect */
+}
+
+table tbody td {
+  cursor: pointer;
+}
+
+table button {
+  padding: 8px 14px;
+  background-color: #e74c3c; /* Red for delete */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+table button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-list {
+    padding: 20px;
+  }
+
+  .search-sort-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  table th,
+  table td {
+    padding: 14px;
+  }
+
+  .search-bar,
+  .sort-dropdown {
+    font-size: 14px;
+    padding: 12px;
+    width: 100%; /* Make search and sort bars full width on smaller screens */
+  }
+
+  button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* Paragraph styling */
+p {
+  text-align: center;
+  color: #868e96;
+  font-size: 14px;
+  margin-top: 30px;
+}
