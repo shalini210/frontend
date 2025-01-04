@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TaskManager.css';
 import axios from 'axios';
-
+import { API_URL } from '../../config';
 const TaskManager = () => {
   const [tasks, setTasks] = useState([]);
   const [filteredTasks, setFilteredTasks] = useState([]);
@@ -17,7 +17,7 @@ const TaskManager = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/tasks');
+        const response = await axios.get(`${API_URL}/api/tasks`);
         setTasks(response.data);
         setFilteredTasks(response.data);
       } catch (error) {
@@ -47,7 +47,7 @@ const TaskManager = () => {
       if (currentTask._id) {
         // Edit task
         const response = await axios.put(
-          `http://localhost:5000/api/tasks/${currentTask._id}`,
+          `${API_URL}/api/tasks/${currentTask._id}`,
           currentTask
         );
         setTasks((prev) =>
@@ -55,7 +55,7 @@ const TaskManager = () => {
         );
       } else {
         // Add new task
-        const response = await axios.post('http://localhost:5000/api/tasks', currentTask);
+        const response = await axios.post(`${API_URL}/api/tasks`, currentTask);
         setTasks((prev) => [...prev, response.data]);
       }
       setFilteredTasks(tasks);
@@ -79,7 +79,7 @@ const TaskManager = () => {
   const handleDeleteTask = async (id) => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+        await axios.delete(`${API_URL}/api/tasks/${id}`);
         setTasks((prev) => prev.filter((task) => task._id !== id));
         setFilteredTasks((prev) => prev.filter((task) => task._id !== id));
       } catch (error) {

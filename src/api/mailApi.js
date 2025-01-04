@@ -1,8 +1,8 @@
 import axios from 'axios';
-
-const API_URL = 'https://backend-ab2y-ikazrn0vs-shalini210s-projects.vercel.app/api/mail/send';
+import { API_URL } from '../config';
+const url = `${API_URL}/api/mail/send`;
 
 export const sendMail = async (mailData) => {
-  const response = await axios.post(API_URL, mailData);
+  const response = await axios.post(URL, mailData);
   return response.data;
 };

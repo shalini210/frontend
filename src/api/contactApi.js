@@ -1,13 +1,15 @@
 import axios from 'axios';
-
-const API_URL = 'https://backend-ab2y-ikazrn0vs-shalini210s-projects.vercel.app/api/contacts';
+import { API_URL } from '../config';
+// const API_URL = 'https://backend-ab2y-ikazrn0vs-s
+// halini210s-projects.vercel.app/api/contacts';
 
 export const getContacts = async () => {
-  const response = await axios.get(API_URL);
+  let URL = `${API_URL}/api/contacts`
+  const response = await axios.get(URL);
   return response.data;
 };
 
 export const addContact = async (contact) => {
-  const response = await axios.post(API_URL, contact);
+  const response = await axios.post(URL, contact);
   return response.data;
 };
