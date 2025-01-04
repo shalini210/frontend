@@ -6,6 +6,7 @@ import { API_URL } from '../config';
 export const getContacts = async () => {
   let URL = `${API_URL}/api/contacts`
   const response = await axios.get(URL);
+  console.log(response.data)
   return response.data;
 };
 
