@@ -3,6 +3,7 @@ import './Dashboard.css';
 import { getContacts } from '../api/contactApi';
 import { getTasks } from '../api/taskApi';
 import { Bar, Pie } from 'react-chartjs-2';
+import { API_URL } from '../config';
 import {
   Chart as ChartJS,
   CategoryScale,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ContactList.css';
 import axios from 'axios';
-
+import { API_URL } from '../../config';
 const ContactList = () => {
   const [contacts, setContacts] = useState([]);
   const [filteredContacts, setFilteredContacts] = useState([]); // For storing filtered contacts
@@ -24,7 +24,8 @@ const ContactList = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('https://backend-ab2y-jcii2t5sz-shalini210s-projects.vercel.app/api/contacts');
+        let url = API_URL+'/api/contacts'
+        const response = await axios.get(url);
         setContacts(response.data);
         setFilteredContacts(response.data); // Initially set the filtered contacts to all contacts
       } catch (error) {
@@ -86,7 +87,7 @@ const ContactList = () => {
       if (currentContact._id) {
         // Update existing contact
         const response = await axios.put(
-          `http://localhost:5000/api/contacts/${currentContact._id}`,
+          `${API_URL}/api/contacts/${currentContact._id}`,
           currentContact
         );
         setContacts((prev) =>
@@ -97,7 +98,7 @@ const ContactList = () => {
         );
       } else {
         // Add new contact
-        const response = await axios.post('http://localhost:5000/api/contacts', currentContact);
+        const response = await axios.post(`${API_URL}/api/contacts`, currentContact);
         setContacts((prev) => [...prev, response.data]);
         setFilteredContacts((prev) => [...prev, response.data]);
       }
@@ -144,7 +145,7 @@ const ContactList = () => {
   const handleDeleteContact = async (id) => {
     if (window.confirm('Are you sure you want to delete this contact?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/contacts/${id}`);
+        await axios.delete(`${API_URL}/api/contacts/${id}`);
         setContacts((prev) => prev.filter((contact) => contact._id !== id));
         setFilteredContacts((prev) => prev.filter((contact) => contact._id !== id));
       } catch (error) {
