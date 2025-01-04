@@ -24,7 +24,7 @@ const ContactList = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('https://backend-ab2y-ikazrn0vs-shalini210s-projects.vercel.app/api/contacts');
+        const response = await axios.get('https://backend-ab2y-jcii2t5sz-shalini210s-projects.vercel.app/api/contacts');
         setContacts(response.data);
         setFilteredContacts(response.data); // Initially set the filtered contacts to all contacts
       } catch (error) {
